@@ -21,8 +21,6 @@ function update() {
     c.fillStyle = "#000";
     c.fillRect(0, 0, canvas.width, canvas.height);
 
-    checkForCollisions();
-
     food.forEach((f) => {
       f.draw(c);
     });
@@ -44,6 +42,7 @@ function update() {
         bodypart.draw(c);
       }
     });
+    checkForCollisions();
     verifyFood();
   }
 }
