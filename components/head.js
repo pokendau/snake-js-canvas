@@ -3,7 +3,7 @@ export default class Head {
     this.x = x;
     this.y = y;
     this.direction = "right";
-    this.speed = 4;
+    this.speed = 20;
   }
 
   draw(c) {
@@ -21,23 +21,23 @@ export default class Head {
         this.y += this.speed;
         break;
     }
-    c.fillStyle = "red";
+    c.fillStyle = "#C04ABC";
     c.fillRect(this.x, this.y, 20, 20);
   }
 
   move(keyCode) {
     switch (keyCode) {
       case 65:
-        this.direction = "left";
+        this.direction = this.direction === "right" ? "right" : "left";
         break;
       case 68:
-        this.direction = "right";
+        this.direction = this.direction === "left" ? "left" : "right";
         break;
       case 87:
-        this.direction = "up";
+        this.direction = this.direction === "down" ? "down" : "up";
         break;
       case 83:
-        this.direction = "down";
+        this.direction = this.direction === "up" ? "up" : "down";
         break;
     }
   }
